@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Com.Unity3d.Player;
@@ -23,8 +24,8 @@ namespace maui
         {
             base.OnCreate(savedInstanceState);
 
-            unityPlayer = new UnityPlayer(this);
-            SetContentView(unityPlayer);
+            var unityIntent = new Intent(this, typeof(UnityActivity));
+            StartActivity(unityIntent);
         }
 
         protected override void OnPause()
